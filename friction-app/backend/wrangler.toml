@@ -1,0 +1,20 @@
+name = "friction-backend"
+main = "src/index.ts"
+compatibility_date = "2024-05-29"
+
+# Enable Durable Objects
+[durable_objects]
+bindings = [
+  { name = "FRICTION_VAULT", class_name = "FrictionVault" }
+]
+
+# Enable Workers AI
+[ai]
+binding = "AI"
+
+# Migrations for Durable Objects
+[[migrations]]
+tag = "v1"
+new_classes = ["FrictionVault"]
+
+# CORS (handled in code, but good to keep in mind)
